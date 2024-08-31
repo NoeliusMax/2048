@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0e0dufkkcnqb"]
+
+[ext_resource type="Script" path="res://Scripts/Grid.cs" id="1_5og7l"]
+[ext_resource type="AudioStream" uid="uid://bx0beckoodsc" path="res://Resources/audio_stream_randomizer.tres" id="2_h8leu"]
+
+[node name="Grid" type="Node2D"]
+script = ExtResource("1_5og7l")
+
+[node name="Grid Background" type="Polygon2D" parent="."]
+color = Color(0.733333, 0.67451, 0.623529, 1)
+polygon = PackedVector2Array(0, 0, 475, 0, 475, 475, 0, 475)
+
+[node name="Row" type="Node2D" parent="Grid Background"]
+
+[node name="Grid Square" type="Polygon2D" parent="Grid Background/Row"]
+position = Vector2(15, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square2" type="Polygon2D" parent="Grid Background/Row"]
+position = Vector2(130, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square3" type="Polygon2D" parent="Grid Background/Row"]
+position = Vector2(245, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square4" type="Polygon2D" parent="Grid Background/Row"]
+position = Vector2(360, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Row2" type="Node2D" parent="Grid Background"]
+position = Vector2(0, 115)
+
+[node name="Grid Square" type="Polygon2D" parent="Grid Background/Row2"]
+position = Vector2(15, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square2" type="Polygon2D" parent="Grid Background/Row2"]
+position = Vector2(130, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square3" type="Polygon2D" parent="Grid Background/Row2"]
+position = Vector2(245, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square4" type="Polygon2D" parent="Grid Background/Row2"]
+position = Vector2(360, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Row3" type="Node2D" parent="Grid Background"]
+position = Vector2(0, 230)
+
+[node name="Grid Square" type="Polygon2D" parent="Grid Background/Row3"]
+position = Vector2(15, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square2" type="Polygon2D" parent="Grid Background/Row3"]
+position = Vector2(130, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square3" type="Polygon2D" parent="Grid Background/Row3"]
+position = Vector2(245, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square4" type="Polygon2D" parent="Grid Background/Row3"]
+position = Vector2(360, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Row4" type="Node2D" parent="Grid Background"]
+position = Vector2(0, 345)
+
+[node name="Grid Square" type="Polygon2D" parent="Grid Background/Row4"]
+position = Vector2(15, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square2" type="Polygon2D" parent="Grid Background/Row4"]
+position = Vector2(130, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square3" type="Polygon2D" parent="Grid Background/Row4"]
+position = Vector2(245, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Grid Square4" type="Polygon2D" parent="Grid Background/Row4"]
+position = Vector2(360, 15)
+color = Color(0.8, 0.752941, 0.701961, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.005
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h8leu")
+
+[connection signal="timeout" from="Timer" to="." method="TimerTimeout"]

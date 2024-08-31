@@ -1,0 +1,184 @@
+[gd_scene load_steps=12 format=3 uid="uid://dk4630gtibf84"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_puuxl"]
+[ext_resource type="FontFile" uid="uid://cax5incvhlghh" path="res://Assets/Font/kenvector_future.ttf" id="2_7es5t"]
+[ext_resource type="Texture2D" uid="uid://c5dyt5ettvmcw" path="res://Assets/Buttons/grey_button03.png" id="3_eiwma"]
+[ext_resource type="Texture2D" uid="uid://dcr20c1yo3edq" path="res://Assets/Buttons/grey_button04.png" id="4_7uoes"]
+[ext_resource type="AudioStream" uid="uid://8dqk42i5gyrb" path="res://Assets/Sounds/click1.ogg" id="4_syg8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcv2r"]
+bg_color = Color(0.459478, 0.280842, 0.140227, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rukl"]
+bg_color = Color(0.852643, 0.580172, 0.375682, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxjq6"]
+texture = ExtResource("3_eiwma")
+modulate_color = Color(0.85098, 0.580392, 0.376471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lknpi"]
+texture = ExtResource("3_eiwma")
+modulate_color = Color(0.741176, 0.478431, 0.278431, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liuol"]
+texture = ExtResource("4_7uoes")
+modulate_color = Color(0.740865, 0.479945, 0.278046, 1)
+
+[sub_resource type="GDScript" id="GDScript_0x4y0"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_puuxl")
+
+[node name="PanelBG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 45.0
+offset_right = 188.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcv2r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 47.0
+offset_right = 185.0
+offset_bottom = 254.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rukl")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 14.0
+offset_right = 86.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7es5t")
+theme_override_font_sizes/font_size = 75
+text = "2048"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_top = 121.0
+offset_right = 85.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "NoeliusMax"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = 6.0
+offset_right = 153.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7es5t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_hxjq6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lknpi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_liuol")
+text = "Start Game"
+script = SubResource("GDScript_0x4y0")
+
+[node name="QuitGameBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = 121.0
+offset_right = 153.5
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7es5t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_hxjq6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lknpi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_liuol")
+text = "Quit"
+script = SubResource("GDScript_0x4y0")
+
+[node name="AudioPlayer_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_syg8v")
+
+[node name="AudioPlayer_2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_syg8v")
+
+[connection signal="pressed" from="StartGameBtn" to="." method="_on_start_game_btn_pressed"]
+[connection signal="pressed" from="QuitGameBtn" to="." method="_on_quit_game_btn_pressed"]
+[connection signal="finished" from="AudioPlayer_1" to="." method="StartButtonSoundFinished"]
+[connection signal="finished" from="AudioPlayer_2" to="." method="QuitButtonSoundFinished"]
