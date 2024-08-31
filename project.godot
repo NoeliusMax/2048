@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://2048_logo.png"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="2048"
